@@ -2,4 +2,3 @@
 cd /userLibs
 tar xvf spark-2.3.1-bin-hadoop2.7.tgz
 mv spark-2.3.1-bin-hadoop2.7 /usr/local/spark
-
