@@ -39,5 +39,6 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", path: "shell/install-java.sh"
+  config.vm.provision "shell", path: "shell/install-scala.sh"
   
 end
