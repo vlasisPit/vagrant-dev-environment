@@ -2,3 +2,4 @@
 .idea/
 *.log
 tmp
+userLibs/spark-2.3.1-bin-hadoop2.7.tgz
