@@ -24,3 +24,12 @@ You can create applications and place them in "applications" shared folder and t
 * Run `vagrant up` and the VM will start booting (This may take some time).
 
 * When done, run `vagrant ssh` in order to connect to guest machine you created.
+
+* When you want shut down your PC/laptop, `vagrant halt` and shut down. Later, when you want to boot your VM again, `vagrant up`.  
+
+* If you want to  destroy completely your VM, `vagrant destroy -f`. Take care all VMs will be destroy. If you want to destroy a 
+specific VM `vagrant global-status` and then `vagrant destroy ID`.
+
+# Notes
+If you encounter when running the scripts this error `/bin/bash^M: bad interpreter: No such file or directory`
+then change the EOL conversion of each script to UNIX by using a text editor, like notepad++.
