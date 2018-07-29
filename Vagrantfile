@@ -29,7 +29,8 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   config.vm.synced_folder "shell/", "/shell"
   config.vm.synced_folder "applications/", "/applications"
-
+  config.vm.synced_folder "userLibs/", "/userLibs"
+  
   config.vm.provider "virtualbox" do |v|
 	cpu_exec_cap = 80
   	mem = `wmic computersystem Get TotalPhysicalMemory`.split[1].to_i * 3 / 8 / 1024 / 1024
@@ -40,5 +41,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", path: "shell/install-java.sh"
   config.vm.provision "shell", path: "shell/install-scala.sh"
+  config.vm.provision "shell", path: "shell/install-spark.sh"
   
 end

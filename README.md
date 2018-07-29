@@ -2,6 +2,9 @@
 * Install VirtualBox (tested with 5.2.16)
 * Install Vagrant (tested with 2.1.2)
 * TCP port 9090 must be free.
+* Download from here `https://spark.apache.org/downloads.html` and download a pre-built for Hadoop 2.7 version of Spark. This project works 
+only with file `spark-2.3.1-bin-hadoop2.7.tgz`. Place this file manually inside `userLibs` folder after cloning the project.
+If you want to use another Spark version, you must change the file `shell\install-spark.sh`.  
 
 # Description
 This project provides a Vagrant environment running on VilrtualBox with already installed Java, Scala, Hadoop and Spark.
