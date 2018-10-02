@@ -27,9 +27,8 @@ Vagrant.configure("2") do |config|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  config.vm.synced_folder "shell/", "/shell"
+  config.vm.synced_folder "scripts/", "/scripts"
   config.vm.synced_folder "applications/", "/applications"
-  config.vm.synced_folder "userLibs/", "/userLibs"
   
   config.vm.provider "virtualbox" do |v|
 	cpu_exec_cap = 80
@@ -39,9 +38,9 @@ Vagrant.configure("2") do |config|
 	puts "Provisioning VM with #{cpus} CPU's (at #{cpu_exec_cap}%) and #{mem/1024} GB RAM."
   end
 
-  config.vm.provision "shell", path: "shell/install-java.sh"
-  config.vm.provision "shell", path: "shell/install-scala.sh"
-  config.vm.provision "shell", path: "shell/install-spark.sh"
-  config.vm.provision "shell", path: "shell/env.sh"
+  config.vm.provision "shell", path: "scripts/install-java.sh"
+  config.vm.provision "shell", path: "scripts/install-scalaSbt.sh"
+  config.vm.provision "shell", path: "scripts/install-spark.sh"
+  config.vm.provision "shell", path: "scripts/env.sh"
   
 end
