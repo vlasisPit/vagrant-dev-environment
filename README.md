@@ -9,9 +9,10 @@
 * Sbt
 * Spark
 * Redis
+* Docker
 
 # Description
-This project provides a Vagrant environment running on VilrtualBox with already installed Java, Scala, Sbt, Spark and Redis DB.
+This project provides a Vagrant environment running on VilrtualBox with already installed Java, Scala, Sbt, Spark, Redis DB and Docker.
 You can create applications and place them in "applications" shared folder and test them in Debian OS.
 
 # Instructions
