@@ -29,7 +29,8 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   config.vm.synced_folder "scripts/", "/scripts"
   config.vm.synced_folder "applications/", "/applications"
-  
+  config.vm.synced_folder "redis-cluster/", "/redis-cluster"
+    
   config.vm.provider "virtualbox" do |v|
 	cpu_exec_cap = 80
   	mem = `wmic computersystem Get TotalPhysicalMemory`.split[1].to_i * 3 / 8 / 1024 / 1024
@@ -41,6 +42,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "scripts/install-java.sh"
   config.vm.provision "shell", path: "scripts/install-scalaSbt.sh"
   config.vm.provision "shell", path: "scripts/install-spark.sh"
+  config.vm.provision "shell", path: "scripts/install-redis.sh"
   config.vm.provision "shell", path: "scripts/env.sh"
   
 end

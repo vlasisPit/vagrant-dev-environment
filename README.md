@@ -3,8 +3,15 @@
 * Install Vagrant (tested with 2.1.2)
 * TCP port 9090 must be free.
 
+# Supported Technologies
+* Java
+* Scala
+* Sbt
+* Spark
+* Redis
+
 # Description
-This project provides a Vagrant environment running on VilrtualBox with already installed Java, Scala, Sbt and Spark.
+This project provides a Vagrant environment running on VilrtualBox with already installed Java, Scala, Sbt, Spark and Redis DB.
 You can create applications and place them in "applications" shared folder and test them in Debian OS.
 
 # Instructions
