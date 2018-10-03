@@ -1,7 +1,10 @@
 #!/bin/bash
 sudo apt-get -y install redis-server rubygems
 sudo systemctl stop redis-server
+
+# This line is necessary if you are behind a proxy, else you can remove it
 echo ':ssl_verify_mode: 0' > ~/.gemrc	#To skip SSL certificate checks during gem installation (either gem install or bundle install), add this to your .gemrc
+
 sudo gem install redis
 sudo wget http://download.redis.io/redis-stable/src/redis-trib.rb
 
