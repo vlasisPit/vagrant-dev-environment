@@ -44,6 +44,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "scripts/install-spark.sh"
   config.vm.provision "shell", path: "scripts/install-redis.sh"
   config.vm.provision "shell", path: "scripts/install-docker.sh"
+  config.vm.provision "shell", path: "scripts/install-maven.sh"
   config.vm.provision "shell", path: "scripts/env.sh"
   
 end
