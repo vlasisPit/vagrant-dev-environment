@@ -22,3 +22,6 @@ sudo apt-cache policy docker-ce
 
 sudo apt-get -y install docker-ce
 
+sudo docker swarm init --advertise-addr 192.168.33.10
+
+sudo docker login -u vlasispi89 -p xxxxxxx 
