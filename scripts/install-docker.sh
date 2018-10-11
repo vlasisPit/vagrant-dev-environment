@@ -24,4 +24,4 @@ sudo apt-get -y install docker-ce
 
 sudo docker swarm init --advertise-addr 192.168.33.10
 sudo docker network create --driver overlay --subnet 192.168.3.1/24 test-net 
-sudo docker login -u vlasispi89 -p xxxxxxxx 
+#sudo docker login -u vlasispi89 -p xxxxxxxx 
