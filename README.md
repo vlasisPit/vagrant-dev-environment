@@ -38,8 +38,11 @@ specific VM `vagrant global-status` and then `vagrant destroy ID`.
 
 # Notes
 If you encounter when running the scripts this error `/bin/bash^M: bad interpreter: No such file or directory`
-then change the EOL conversion of each script to UNIX by using a text editor, like notepad++.
+then change the EOL conversion of each script to UNIX by using a text editor, like notepad++, or execute
+`sed -i -e 's/\r$//' script.sh`
 In file `scripts\install-docker.sh`, you must specify yours docker cloud ID/password.
 In order to set the environment variables,
-`cd /scripts` and then
-`. env.sh`
+```
+cd /scripts
+. env.sh
+```
