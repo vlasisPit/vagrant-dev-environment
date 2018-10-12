@@ -39,6 +39,7 @@ Vagrant.configure("2") do |config|
 	puts "Provisioning VM with #{cpus} CPU's (at #{cpu_exec_cap}%) and #{mem/1024} GB RAM."
   end
 
+  config.vm.provision "shell", path: "scripts/init.sh"
   config.vm.provision "shell", path: "scripts/install-java.sh"
   config.vm.provision "shell", path: "scripts/install-scalaSbt.sh"
   config.vm.provision "shell", path: "scripts/install-spark.sh"
