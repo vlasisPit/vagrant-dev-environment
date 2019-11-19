@@ -6,8 +6,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://atlas.hashicorp.com/search.
   # config.vm.box_url is necessary. Otherwise we receive a 404 not found error
   # The problem is that by default Vagrant searches for boxes in https://atlas.hashicorp.com
-  config.vm.box = "debian/stretch64"
-  config.vm.box_url = "https://vagrantcloud.com/debian/boxes/stretch64/versions/9.2.0/providers/virtualbox.box"
+  config.vm.box = "ubuntu/trusty64"
   config.vm.box_download_insecure = true
 
   # Create a forwarded port mapping which allows access to a specific port

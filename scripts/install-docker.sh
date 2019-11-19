@@ -12,7 +12,7 @@ sudo apt-get install -y apt-transport-https ca-certificates wget curl gnupg2 sof
 curl -kfsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -
 
 # Add the official Docker repository to the system by running below command in the terminal.
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
 # Update the apt database.
 sudo apt-get update
