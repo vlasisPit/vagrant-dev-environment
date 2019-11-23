@@ -34,6 +34,11 @@ Vagrant.configure("2") do |config|
 	cpu_exec_cap = 80
   	mem = `wmic computersystem Get TotalPhysicalMemory`.split[1].to_i * 5 / 8 / 1024 / 1024
   	cpus = `wmic cpu get NumberOfLogicalProcessors`.split[1].to_i 
+	
+	v.customize ["modifyvm", :id, "--cpus", cpus]
+	v.customize ["modifyvm", :id, "--memory", mem]
+  	v.customize ["modifyvm", :id, "--ioapic", "on"]
+	v.customize ["modifyvm", :id, "--cpuexecutioncap", cpu_exec_cap]
 
 	puts "Provisioning VM with #{cpus} CPU's (at #{cpu_exec_cap}%) and #{mem/1024} GB RAM."
   end

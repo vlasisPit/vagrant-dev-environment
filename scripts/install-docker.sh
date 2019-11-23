@@ -20,7 +20,8 @@ sudo apt-get update
 #Make sure you are installing Docker from the official repository, not from the default Debian repository.
 sudo apt-cache policy docker-ce
 
-sudo apt-get -y install docker-ce
+#sudo apt-get -y install docker-ce
+sudo apt-get -y install docker-ce=18.06.1~ce~3-0~ubuntu  #CHANGE THIS LATER. DONT HARD CODE DOCKER VERSION
 
 sudo docker swarm init --advertise-addr 192.168.33.10
 sudo docker network create --driver overlay --subnet 192.168.3.1/24 test-net 
