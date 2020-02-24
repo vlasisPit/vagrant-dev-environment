@@ -26,3 +26,7 @@ sudo apt-get -y install docker-ce=18.06.1~ce~3-0~ubuntu  #CHANGE THIS LATER. DON
 sudo docker swarm init --advertise-addr 192.168.33.10
 sudo docker network create --driver overlay --subnet 192.168.3.1/24 test-net 
 #sudo docker login -u vlasispi89 -p xxxxxxxx 
+
+#install docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
