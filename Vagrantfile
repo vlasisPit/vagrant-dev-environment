@@ -12,7 +12,11 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 80, host:9090
+  config.vm.network "forwarded_port", guest: 9092, host:9092
+  config.vm.network "forwarded_port", guest: 27017, host:27017
+  config.vm.network "forwarded_port", guest: 6379, host:6379
+  config.vm.network "forwarded_port", guest: 2181, host:2181
+    config.vm.network "forwarded_port", guest: 80, host:9090
   
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -29,10 +33,11 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder "scripts/", "/scripts"
   config.vm.synced_folder "applications/", "/applications"
   config.vm.synced_folder "redis-cluster/", "/redis-cluster"
+  config.vm.synced_folder "../", "/workspace"
     
   config.vm.provider "virtualbox" do |v|
 	cpu_exec_cap = 80
-  	mem = `wmic computersystem Get TotalPhysicalMemory`.split[1].to_i * 5 / 8 / 1024 / 1024
+  	mem = `wmic computersystem Get TotalPhysicalMemory`.split[1].to_i * 3 / 8 / 1024 / 1024
   	cpus = `wmic cpu get NumberOfLogicalProcessors`.split[1].to_i 
 	
 	v.customize ["modifyvm", :id, "--cpus", cpus]
@@ -49,6 +54,6 @@ Vagrant.configure("2") do |config|
   #config.vm.provision "shell", path: "scripts/install-spark.sh"
   #config.vm.provision "shell", path: "scripts/install-redis.sh"
   config.vm.provision "shell", path: "scripts/install-docker.sh"
-  #config.vm.provision "shell", path: "scripts/install-maven.sh"
+  config.vm.provision "shell", path: "scripts/install-maven.sh"
   
 end
